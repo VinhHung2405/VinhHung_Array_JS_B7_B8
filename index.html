@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bài Tập Array</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+        <!-- Boostrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- font awesome   -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- link css  -->
+        <link rel="stylesheet" href="./style.css">
+    <body>
+        <div class="container content">
+            <div class="title text-center">
+                <h1>bài tập mảng</h1>
+            </div>
+            <div class="form__content">
+                <form class="row gy-3 align-items-center py-3">
+                    <div class="col-12 col-lg-6">
+                        <input type="number" class="form-control form-input" id="inputNum" placeholder="Nhập số n">
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <button class="btn btn-style me-1 mb-1" type="reset" onclick="getNum()">Thêm
+                            số</button>
+                    </div>
+                    <div class="alert alert-success alert__content" role="alert">
+                        <i class="fa-solid fa-hand-point-right"></i><span id="arrayNum"></span>
+                    </div>
+                </form>
+            </div>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                             Tổng số dương
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <form class="row gy-3 align-items-center px-2">
+                                <div class="col-12">
+                                    <button class="btn btn-style " type="button" onclick="calcSum()">Tính tổng</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    <i class="fa-solid fa-hand-point-right"></i><span id="sum"></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                             Đếm số dương
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <form class="row gy-3 align-items-center px-2">
+                                <div class="col-12">
+                                    <button class="btn btn-style" type="button" onclick="countSum()">Đếm số</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    <i class="fa-solid fa-hand-point-right"></i><span id="count"></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+                             Tìm số nhỏ nhất
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <form class="row gy-3 align-items-center px-2">
+            
+                                <div class="col-12">
+                                    <button class="btn btn-style" type="button" onclick="findMin()">Tìm số nhỏ
+                                        nhất</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    <i class="fa-solid fa-hand-point-right"></i><span id="min"></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
+                             Tìm số dương nhỏ nhất
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <form class="row gy-3 align-items-center px-2">
+            
+                                <div class="col-12">
+                                    <button class="btn btn-style" type="button" onclick="findMinPos()">Tìm số dương nhỏ
+                                        nhất</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    <i class="fa-solid fa-hand-point-right"></i><span id="minPos"></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">
+                             Tìm số chẵn cuối cùng
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <form class="row gy-3 align-items-center px-2">
+            
+                                <div class="col-12">
+                                    <button class="btn btn-style" type="button" onclick="findLastEven()">Tìm số
+                                        chẵn</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    <i class="fa-solid fa-hand-point-right"></i><span id="lastEven"></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseTwo">
+                             Đổi chỗ
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <form class="row gy-3 align-items-center px-2">
+                                <div class="col-12 col-lg-6">
+                                    <input type="number" class="form-control form__input" id="inputIndex1"
+                                        placeholder="Nhập số vị trí 1">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <input type="number" class="form-control form__input" id="inputIndex2"
+                                        placeholder="Nhập số vị trí 2">
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-style" type="button" onclick="changePos()">Đổi
+                                        chỗ</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    <i class="fa-solid fa-hand-point-right"></i><span id="ChangePosition"></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSev" aria-expanded="false" aria-controls="collapseTwo">
+                             Sắp xếp tăng dần
+                        </button>
+                    </h2>
+                    <div id="collapseSev" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <form class="row gy-3 align-items-center px-2">
+                                <div class="col-12">
+                                    <button class="btn btn-style" type="button" onclick="sortIn()">Sắp xếp</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    <i class="fa-solid fa-hand-point-right"></i><span id="inCrease"></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseE" aria-expanded="false" aria-controls="collapseTwo">
+                             Tìm số nguyên tố đầu tiên
+                        </button>
+                    </h2>
+                    <div id="collapseE" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <form class="row gy-3 align-items-center px-2">
+                                <div class="col-12">
+                                    <button class="btn btn-style" type="button" onclick="findFirstPrime()">Tìm số nguyên
+                                        tố</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    <i class="fa-solid fa-hand-point-right"></i><span id="prime"></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseTwo">
+                             Đếm số nguyên
+                        </button>
+                    </h2>
+                    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <form class="row gy-3 align-items-center py-3">
+                                <div class="col-12 col-lg-6">
+                                    <input type="number" class="form-control form__input" id="inputNewNum" placeholder="Nhập số">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <button class="btn btn-style" type="reset" onclick="getNewNum()">Thêm
+                                        số</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    <i class="fa-solid fa-hand-point-right"></i><span id="newNum"></span>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <button class="btn btn-style" type="button" onclick="countInt()">Đếm số
+                                        nguyên</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    <i class="fa-solid fa-hand-point-right"></i><span id="countInt"></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTwo">
+                             So sánh số lượng số âm và dương
+                        </button>
+                    </h2>
+                    <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <form class="row gy-3 align-items-center px-2">
+                                <div class="col-12">
+                                    <button class="btn btn-style" type="button" onclick="compareNum()">So sánh</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    <i class="fa-solid fa-hand-point-right"></i><span id="compare"></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Boostrap  -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+        <!-- link js  -->
+        <script src="./index.js"></script>
+    </body>
+</html>
